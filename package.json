@@ -64,6 +64,7 @@
     "husky": "4.2.5",
     "lint-staged": "10.2.11",
     "npm-check-updates": "7.0.3",
-    "prettier": "2.0.5"
+    "prettier": "2.0.5",
+    "netlify-cli": "2.59.0"
   }
 }
