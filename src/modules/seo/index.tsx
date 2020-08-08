@@ -17,7 +17,7 @@ export function SEO({ locale, pageName }: any) {
   )
 
   const { siteMetadata } = data.site,
-    {title} = siteMetadata
+    { title } = siteMetadata
 
   return (
     <Helmet

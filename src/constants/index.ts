@@ -4,7 +4,7 @@ export const siteMetadata = {
   title: 'Battleship',
   description: 'Description',
   author: 'Lyulyaev Maxim',
-  siteUrl: `https://battleship.com`
+  siteUrl: `https://battleship.com`,
 }
 
 export const routes = {
