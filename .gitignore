@@ -1,0 +1,14 @@
+.idea
+/public
+/**/node_modules
+/**/.cache
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
+/cypress
+/storybook-static
+*.sw*

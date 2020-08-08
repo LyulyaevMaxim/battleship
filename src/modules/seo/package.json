@@ -1,0 +1,14 @@
+{
+  "name": "seo-module",
+  "description": "Module for SEO",
+  "version": "1.0.0",
+  "author": "Lyulyaev Maxim",
+  "license": "MIT",
+  "dependencies": {
+    "react-helmet": "6.1.0"
+  },
+  "devDependencies": {
+    "@types/react-helmet": "6.1.0",
+    "gatsby-plugin-react-helmet": "3.3.10"
+  }
+}

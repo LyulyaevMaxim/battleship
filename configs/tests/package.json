@@ -1,0 +1,24 @@
+{
+  "name": "project-tests",
+  "description": "Tests Configuration",
+  "author": "Lyulyaev Maxim",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "26.0.9",
+    "babel-jest": "26.2.2",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "26.2.2",
+    "jest-cli": "26.2.2",
+    "react-test-renderer": "16.13.1",
+    "ts-jest": "26.1.4",
+    "start-server-and-test": "1.11.2",
+    "@testing-library/react": "10.4.8",
+    "@testing-library/jest-dom": "5.11.2",
+    "@testing-library/react-hooks": "3.4.1",
+    "jest-styled-components": "7.0.2",
+    "jest-in-case": "1.0.2",
+    "@types/jest-in-case": "1.0.2",
+    "browser-resolve": "2.0.0"
+  }
+}
