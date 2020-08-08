@@ -27,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format:check & yarn lint:css & yarn lint:js",
+      "pre-commit": "yarn format:check && yarn lint:css && yarn lint:js",
       "post-commit": "git update-index --again"
     }
   },
