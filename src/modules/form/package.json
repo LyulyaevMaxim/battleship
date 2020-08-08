@@ -1,0 +1,15 @@
+{
+  "name": "forms-module",
+  "description": "Module for forms",
+  "version": "1.0.0",
+  "author": "Lyulyaev Maxim",
+  "license": "MIT",
+  "dependencies": {
+    "react-hook-form": "6.3.0",
+    "yup": "0.29.3"
+  },
+  "devDependencies": {
+    "@types/yup": "0.29.4",
+    "react-hook-form-devtools": "1.2.0"
+  }
+}

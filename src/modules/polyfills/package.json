@@ -1,0 +1,15 @@
+{
+  "name": "polyfills-module",
+  "description": "Module for polyfills",
+  "version": "1.0.0",
+  "author": "Lyulyaev Maxim",
+  "license": "MIT",
+  "dependencies": {
+    "bowser": "2.10.0",
+    "modernizr": "3.11.3"
+  },
+  "devDependencies": {
+    "@types/modernizr": "3.5.3",
+    "modernizr-loader": "1.0.1"
+  }
+}
