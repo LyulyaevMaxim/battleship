@@ -11,7 +11,8 @@ jobs:
         run: yarn
 
       - name: Formatting
-        run: yarn format
+        id: formatting
+        run: yarn format:check && echo ::set-output name=status::success
 
       - name: CSS
         id: css
@@ -24,7 +25,7 @@ jobs:
         run: yarn lint:js && echo ::set-output name=status::success
 
       - name: Check on failures
-        if: steps.css.outputs.status != 'success' || steps.js.outputs.status != 'success'
+        if: steps.formatting.outputs.status != 'success' && steps.css.outputs.status != 'success' || steps.js.outputs.status != 'success'
         run: echo ${{ toJson(steps) }} && exit 1
 
   tests:
@@ -32,20 +33,20 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Installing Dependencies
-        run: yarn
-
-      - name: Unit
-        id: unit
-        continue-on-error: true
-        run: yarn test:unit && echo ::set-output name=status::success
-
-      - name: Check on failures
-        if: steps.unit.outputs.status != 'success'
-        run: echo ${{ toJson(steps) }} && exit 1
+  #      - name: Installing Dependencies
+  #        run: yarn
+  #
+  #      - name: Unit
+  #        id: unit
+  #        continue-on-error: true
+  #        run: yarn test:unit && echo ::set-output name=status::success
+  #
+  #      - name: Check on failures
+  #        if: steps.unit.outputs.status != 'success'
+  #        run: echo ${{ toJson(steps) }} && exit 1
 
   deploy:
-    needs: [linters]
+    needs: [linters, tests]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -58,8 +59,3 @@ jobs:
 
       - name: Deploying application
         run: yarn dlx netlify-cli deploy -s ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_ACCESS_TOKEN }}
-#      - name: Building storybook
-#        run: yarn storybook:build
-
-#      - name: Deploying storybook
-#        run: yarn dlx netlify-cli deploy --dir=storybook-static -s ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_ACCESS_TOKEN }}
