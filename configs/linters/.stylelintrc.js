@@ -37,10 +37,10 @@ module.exports = {
       format: 'hsl',
     },
     'aditayvm/at-rule-no-children': [{ severity: 'warning' }],
-    'order/order': ['custom-properties', 'dollar-variables', 'declarations', 'at-rules', 'rules'],
+    'order/order': null, //['custom-properties', 'dollar-variables', 'declarations', 'at-rules', 'rules'],
     // 'order/properties-alphabetical-order': true,
     'selector-type-no-unknown': [true, { ignore: ['custom-elements'] }],
-    'selector-class-pattern': '^[a-z][a-zA-Z0-9]+$', //lowerCamelCase
+    // 'selector-class-pattern': '^[a-z][a-zA-Z0-9]+$', //lowerCamelCase
     'block-no-empty': null,
     'at-rule-no-unknown': null,
     'max-nesting-depth': null,
@@ -48,6 +48,7 @@ module.exports = {
     'no-missing-end-of-source-newline': null,
     'comment-empty-line-before': null,
     'comment-whitespace-inside': null,
+    'value-keyword-case': null,
     ...(withJS && { 'no-empty-source': null }),
   },
 }

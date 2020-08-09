@@ -1,6 +1,7 @@
 import React from 'react'
 import loadable from '@loadable/component'
 import { timeout as pTimeout } from 'promise-timeout'
+import { Spin } from 'antd'
 
 interface IGetAsyncModule {
   moduleImport: any
@@ -30,15 +31,11 @@ export function getModuleAsync({
       })
     },
     {
-      fallback: <Loader />,
+      fallback: <Spin />,
     }
   )
 
   if (withPreload) AsyncComponent.preload()
 
   return AsyncComponent
-}
-
-export const Loader: React.FC = () => {
-  return <>Loading...</>
 }
