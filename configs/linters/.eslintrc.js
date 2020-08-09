@@ -49,6 +49,8 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     'react/jsx-pascal-case': 0,
     'react/button-has-type': 0,
+    'react/state-in-constructor': 0,
+    'react/static-property-placement': 0,
     'react/require-default-props': 2,
     'react/jsx-max-depth': [1, { max: 5 }],
     'react-hooks/exhaustive-deps': 1,

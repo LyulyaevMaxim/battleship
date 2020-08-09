@@ -1,8 +1,13 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
-import { get } from 'lodash'
+import { get } from 'lodash-es'
 
-export interface IStore {}
+import { NBattleshipGame } from 'store/battleshipGame/@types'
+import { battleshipGameReducer } from 'store/battleshipGame/reducer'
+
+export interface IStore {
+  battleshipGame: NBattleshipGame.IStore
+}
 
 export function configureStore<IStore>(preloadedState?: any) {
   const middlewares = [thunkMiddleware],
@@ -11,5 +16,11 @@ export function configureStore<IStore>(preloadedState?: any) {
       compose,
     enhancer = composedEnhancers(applyMiddleware(...middlewares))
 
-  return createStore(combineReducers({}), preloadedState, enhancer)
+  return createStore(
+    combineReducers({
+      battleshipGame: battleshipGameReducer,
+    }),
+    preloadedState,
+    enhancer
+  )
 }
