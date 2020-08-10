@@ -37,7 +37,7 @@ export const GameBoardCell: React.FC<IGameBoardCell> = React.memo((props) => {
           `,
         isShowHints && cellStyles.cellWithHints,
       ],
-      [shipId, isShowHints]
+      [shipId, ship?.cellsAlive, isShowHints]
     ),
     className = React.useMemo(
       () =>

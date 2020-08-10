@@ -33,6 +33,7 @@ export namespace NBattleshipGame {
 export namespace NGameBoard {
   export interface ICell {
     isShot: boolean
+    isBlocked?: boolean
     shipId?: NShips.shipId
   }
 
@@ -45,7 +46,7 @@ export namespace NGameBoard {
   }
 }
 
-namespace NShips {
+export namespace NShips {
   interface IShipCell {
     isShot: boolean
     borders: { left?: boolean; right?: boolean; top?: boolean; bottom?: boolean }
@@ -56,7 +57,13 @@ namespace NShips {
     coords: Record<number, Record<number, IShipCell>>
   }
 
-  interface IShipDotShaped extends IShip {
+  export enum ShipTypes {
+    DOT_SHAPED = 'DOT_SHAPED',
+    I_SHAPED = 'I_SHAPED',
+    L_SHAPED = 'L_SHAPED',
+  }
+
+  export interface IShipDotShaped extends IShip {
     cellsAlive: 1
   }
 
