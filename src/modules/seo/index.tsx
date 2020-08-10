@@ -1,23 +1,9 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import { siteMetadata } from '../../constants'
 
 export function SEO({ locale, pageName }: any) {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-          }
-        }
-      }
-    `
-  )
-
-  const { siteMetadata } = data.site,
-    { title } = siteMetadata
+  const { title } = siteMetadata
 
   return (
     <Helmet
