@@ -1,4 +1,5 @@
 /* https://www.gatsbyjs.org/docs/browser-apis/ */
+import 'antd/dist/antd.css'
 import 'modules/stylization/css-reset.css'
 import { detectBrowser } from 'modules/polyfills'
 
